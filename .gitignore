@@ -19,6 +19,9 @@ obj/
 .DS_Store
 Thumbs.db
 
+# Visual Studio
+.vs/
+
 # Logs
 *.log
 

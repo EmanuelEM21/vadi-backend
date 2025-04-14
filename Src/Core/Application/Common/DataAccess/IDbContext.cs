@@ -10,5 +10,8 @@ public interface IDbContext
     /// </summary>
     ISolicitudRepository SolicitudRepository { get; }
 
+    /// <summary>
+    /// Repositorio de estados de solicitudes.
+    /// </summary>
     IEstadoRepository EstadoRepository { get; }
 }

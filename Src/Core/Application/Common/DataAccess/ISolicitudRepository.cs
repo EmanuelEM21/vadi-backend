@@ -8,7 +8,7 @@ namespace Application.Common.DataAccess;
 public interface ISolicitudRepository
 {
     /// <summary>
-    /// Registra una nueva solicitud en base de datos.
+    /// Registra una nueva solicitud.
     /// </summary>
     /// <param name="solicitud">Solicitud a insertar.</param>
     /// <returns>True o false dependiendo de la finalización adecuada del proceso.</returns>
@@ -17,18 +17,19 @@ public interface ISolicitudRepository
     /// <summary>
     /// Obtiene una lista filtrada y paginada con las solicitudes.
     /// </summary>
-    /// <returns>Lista con las solicitudes en base de datos.</returns>
-    Task<List<Solicitud>> GetSolicitudes();
+    /// <param name="filtro">Objeto con los valores necesarios para el filtrado y la paginación.</param>
+    /// <returns>Lista con las solicitudes registradas.</returns>
+    Task<List<Solicitud>> GetSolicitudes(Filtro filtro);
 
     /// <summary>
-    /// Actualiza una solicitud en base de datos.
+    /// Actualiza una solicitud.
     /// </summary>
     /// <param name="solicitud">Solicitud a actualizar con los nuevos datos.</param>
     /// <returns>True o false dependiendo de la finalización adecuada del proceso.</returns>
     Task<bool> UpdateSolicitud(Solicitud solicitud);
 
     /// <summary>
-    /// Elimina un registro Solicitud de base de datos.
+    /// Elimina un registro Solicitud.
     /// </summary>
     /// <param name="solicitudID">ID de la solicitud a eliminar.</param>
     /// <returns>True o false dependiendo de la finalización adecuada del proceso.</returns>

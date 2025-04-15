@@ -10,7 +10,7 @@ namespace Application.Common.DataAccess
         /// <summary>
         /// Obtiene una lista con los estados.
         /// </summary>
-        /// <returns>Lista con los estados en base de datos.</returns>
+        /// <returns>Lista con los estados registrados.</returns>
         Task<List<Estado>> GetEstados();
     }
 }

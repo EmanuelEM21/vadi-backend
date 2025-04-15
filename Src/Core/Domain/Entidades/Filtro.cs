@@ -5,7 +5,7 @@
         /// <summary>
         /// Columna a filtrar
         /// </summary>
-        public string Columna { get; set; } = string.Empty;
+        public required string Columna { get; set; } = string.Empty;
 
         /// <summary>
         /// Valor a buscar.

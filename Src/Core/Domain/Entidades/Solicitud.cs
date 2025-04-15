@@ -10,12 +10,12 @@ public class Solicitud
     /// <summary>
     /// Fecha en que se realizó la solicitud.
     /// </summary>
-    public string FechaSolicitud { get; set; } = string.Empty;
+    public string? FechaSolicitud { get; set; }
 
     /// <summary>
     /// Nombre del usuario solicitante.
     /// </summary>
-    public string Solicitante { get; set; } = string.Empty;
+    public string? Solicitante { get; set; }
 
     /// <summary>
     /// ID del estado de la solicitud

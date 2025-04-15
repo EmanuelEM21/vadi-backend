@@ -19,7 +19,7 @@ namespace DataAccess
                 return string.Empty;
             }
 
-            return $"WHERE {filtro.Columna} LIKE %{filtro.Valor}%";
+            return $"WHERE {filtro.Columna} LIKE '%{filtro.Valor}%'";
         }
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace DataAccess
         /// <returns>Clausula construida.</returns>
         public string BuildClausulaPaginacion(Filtro filtro)
         {
-            return $"OFFSET {filtro.NumeroPagina * filtro.NumeroItems}\r\nFETCH NEXT {filtro.NumeroItems} ROWS ONLY";
+            return $"ORDER BY {filtro.Columna}\r\nOFFSET {filtro.NumeroPagina * filtro.NumeroItems} ROWS\r\nFETCH NEXT {filtro.NumeroItems} ROWS ONLY";
         }
     }
 }

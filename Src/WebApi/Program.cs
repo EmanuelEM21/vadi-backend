@@ -1,3 +1,6 @@
+using Application.Common.DataAccess;
+using DataAccess;
+using DataAccess.Repositories;
 using Microsoft.Data.SqlClient;
 using System.Data;
 
@@ -16,6 +19,12 @@ builder.Services.AddTransient<IDbConnection>(p =>
     var connectionString = p.GetRequiredService<IConfiguration>()["ConnectionStrings:DefaultConnection"] ?? string.Empty;
     return new SqlConnection(connectionString);
 });
+
+//Inyección de dependencias.
+builder.Services.AddTransient<DapperHelper>();
+builder.Services.AddScoped<ISolicitudRepository, SolicitudRepository>();
+builder.Services.AddScoped<IEstadoRepository, EstadoRepository>();
+builder.Services.AddScoped<IDbContext, DbContext>();
 
 var app = builder.Build();
 

@@ -1,9 +1,9 @@
 ﻿namespace Application.Common
 {
     /// <summary>
-    /// Clase con querys a ejecutar en base de datos con Dapper.
+    /// Clase con queries a ejecutar en base de datos con Dapper.
     /// </summary>
-    public class SQLQuerys
+    public class SQLQueries
     {
         /// <summary>
         /// Query para obtener solicitudes filtradas y paginadas.

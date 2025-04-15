@@ -24,7 +24,7 @@ namespace DataAccess.Repositories
         /// <returns>Lista con los estados registrados en base de datos.</returns>
         public async Task<List<Estado>> GetEstados()
         {
-            return (await db.QueryAsync<Estado>(SQLQuerys.GetEstados)).ToList();
+            return (await db.QueryAsync<Estado>(SQLQueries.GetEstados)).ToList();
         }
     }
 }

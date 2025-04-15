@@ -36,7 +36,7 @@ public class SolicitudRepository : ISolicitudRepository
     /// <returns>Lista con las solicitudes en base de datos.</returns>
     public async Task<List<Solicitud>> GetSolicitudes(Filtro filtro)
     {
-        var query = SQLQuerys.GetSolicitudesFiltradas;
+        var query = SQLQueries.GetSolicitudesFiltradas;
         var whereClause = dapperHelper.BuildClausulaWhere(filtro);
         var paginacion = dapperHelper.BuildClausulaPaginacion(filtro);
         query = string.Format(query, whereClause, paginacion);

@@ -27,7 +27,15 @@ public class SolicitudRepository : ISolicitudRepository
     /// <returns>True o false dependiendo de la finalización adecuada del proceso.</returns>
     public async Task<bool> InsertarSolicitud(Solicitud solicitud)
     {
-        return await db.QueryFirstOrDefaultAsync<bool>("[dbo].[InsertSolicitud]", solicitud, commandType: CommandType.StoredProcedure);
+        var parametros = new
+        {
+            solicitud.Id,
+            solicitud.FechaSolicitud,
+            solicitud.Solicitante,
+            solicitud.IdEstado
+        };
+
+        return await db.QueryFirstOrDefaultAsync<bool>("[dbo].[InsertSolicitud]", parametros, commandType: CommandType.StoredProcedure);
     }
 
     /// <summary>
@@ -51,7 +59,15 @@ public class SolicitudRepository : ISolicitudRepository
     /// <returns>True o false dependiendo de la finalización adecuada del proceso.</returns>
     public async Task<bool> UpdateSolicitud(Solicitud solicitud)
     {
-        return await db.QueryFirstOrDefaultAsync<bool>("[dbo].[UpdateSolicitud]", solicitud);
+        var parametros = new
+        {
+            solicitud.Id,
+            solicitud.FechaSolicitud,
+            solicitud.Solicitante,
+            solicitud.IdEstado
+        };
+
+        return await db.QueryFirstOrDefaultAsync<bool>("[dbo].[UpdateSolicitud]", parametros);
     }
 
     /// <summary>

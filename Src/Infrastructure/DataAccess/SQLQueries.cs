@@ -18,7 +18,7 @@
                 FechaSolicitud,
                 Solicitante,
                 IdEstado,
-                Estado AS EstadoValue
+                Estado
             FROM @Solicitudes
             {0}
             {1}
@@ -30,7 +30,7 @@
         public const string GetEstados = @"
             SELECT
                 IdEstado,
-                Estado
+                Estado AS EstadoValue
             FROM [dbo].[Estados]
         ";
     }

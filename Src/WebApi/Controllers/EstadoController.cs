@@ -25,7 +25,7 @@ namespace WebApi.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest($"Hubo un error durante la obtención de los datos: {ex.Message}");
+                return BadRequest(new { mensaje = $"Hubo un error durante la obtención de los datos: {ex.Message}" });
             }
         }
     }

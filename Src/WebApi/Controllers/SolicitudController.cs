@@ -22,12 +22,12 @@ namespace WebApi.Controllers
             {
                 var resultado = await dbContext.SolicitudRepository.InsertarSolicitud(solicitud);
                 return resultado
-                    ? Created("Solicitud creada correctamente", "")
-                    : BadRequest("No se pudo registrar la solicitud");
+                    ? Created("", new { mensaje = "Solicitud creada correctamente" })
+                    : BadRequest(new { mensaje = "No se pudo registrar la solicitud" });
             }
             catch (Exception ex)
             {
-                return BadRequest($"Hubo un error durante el proceso de registro: {ex.Message}");
+                return BadRequest(new { mensaje = $"Hubo un error durante el proceso de registro: {ex.Message}" });
             }
         }
 
@@ -41,7 +41,7 @@ namespace WebApi.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest($"Hubo un error durante la obtención de los datos: {ex.Message}");
+                return BadRequest(new { mensaje = $"Hubo un error durante la obtención de los datos: {ex.Message}" });
             }
         }
 
@@ -52,12 +52,12 @@ namespace WebApi.Controllers
             {
                 var resultado = await dbContext.SolicitudRepository.UpdateSolicitud(solicitud);
                 return resultado
-                    ? Ok("Solicitud actualizada correctamente")
-                    : BadRequest("No se pudo actualizar la solicitud");
+                    ? Ok(new { mensaje = "Solicitud actualizada correctamente" })
+                    : BadRequest(new { mensaje = "No se pudo actualizar la solicitud" });
             }
             catch (Exception ex)
             {
-                return BadRequest($"Hubo un error durante el proceso de actualización: {ex.Message}");
+                return BadRequest(new { mensaje = $"Hubo un error durante el proceso de actualización: {ex.Message}" });
             }
         }
 
@@ -68,12 +68,12 @@ namespace WebApi.Controllers
             {
                 var resultado = await dbContext.SolicitudRepository.DeleteSolicitud(solicitudId);
                 return resultado
-                    ? Ok("Solicitud eliminada correctamente")
-                    : BadRequest("No se pudo eliminar la solicitud");
+                    ? Ok(new { mensaje = "Solicitud eliminada correctamente" })
+                    : BadRequest(new { mensaje = "No se pudo eliminar la solicitud" });
             }
             catch (Exception ex)
             {
-                return BadRequest($"Hubo un error durante el proceso de actualización: {ex.Message}");
+                return BadRequest(new { mensaje = $"Hubo un error durante el proceso de actualización: {ex.Message}" });
             }
         }
     }

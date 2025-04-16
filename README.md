@@ -23,3 +23,4 @@ La API cuenta con documentación Swagger. Para verla, ejecutar la app y acceder 
 - El launchSettings se configuró para que indenpendientemente del método de ejecución, el puerto sea siempre el mismo.
 - En caso de que el puerto sea diferente al http://localhost:5044, es necesario cambiar el API URL del environment en FrontEnd.
 - El API está configurada para que permita acceso desde cualquier origen (CORS).
+- Se mantuvo el connectionString en el appsettings para facilitar la ejecución.

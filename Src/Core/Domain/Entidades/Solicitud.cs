@@ -21,4 +21,9 @@ public class Solicitud
     /// ID del estado de la solicitud
     /// </summary>
     public int? IdEstado { get; set; }
+
+    /// <summary>
+    /// Nombre del estado.
+    /// </summary>
+    public string? Estado { get; set; }
 }
